@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Nessen Client</title>
+        
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">   
+    </head>
+    <body>
+        <h1>Nessen Client</h1>
+        <div class="container-fluid">
+            <div ng-controller="GetAllTasksCtrl">
+                <table class="table table-condensed table-striped table-hover table-bordered" >
+                    <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th>Task Id</th>
+                            <th>Description</th>
+                            <th>Completed</th>
+                        </tr>ode
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="task in tasks">
+                            <td>{{ task.userId }}</td>
+                            <td>{{ task.id }}</td>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.completed }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination total-items="totalItems" ng-model="currentPage"
+                    max-size="15" boundary-links="true"
+                    items-per-page="numPerPage" class="pagination-sm">
+                </pagination>
+            </div>
+        </div>
+
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ui-bootstrap-tpls-1.1.2.min.js"></script>  
+        <script src="js/nessenclientcontroller.js"></script>
+    </body>
+</html>
