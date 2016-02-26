@@ -25,20 +25,25 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="task in tasks" ng-dblclick="dblclick(task);">
-                            <td>{{ task.userId }}</td>
-                            <td>{{ task.taskId }}</td>
-                            <td>{{ task.title }}</td>
-                            <td>{{ task.completed }}</td>
-                            <th>{{ task.url }}</th>
+                            <td>{{task.userId}}</td>
+                            <td>{{task.taskId}}</td>
+                            <td>{{task.title}}</td>
+                            <td>{{task.completed}}</td>
+                            <th>{{task.url}}</th>
                         </tr>
                     </tbody>
                 </table>
+                <div id="iframe_popup" class="pop_up popup_hide">
+                    <iframe id="myIframe"></iframe>
+                    <div class="pop_up_close"></div>
+                </div>
             </div>
         </div>
 
         <script src="js/angular.min.js"></script>
         <script src="js/angular-resource.min.js"></script>
-        <script src="js/ui-bootstrap-tpls-1.1.2.min.js"></script>  
+        <script src="js/ui-bootstrap-tpls-1.1.2.min.js"></script>
+        <script src="js/popup_view.js"></script>
         <script src="js/indexcontroller.js"></script>
     </body>
 </html>
